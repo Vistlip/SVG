@@ -28,6 +28,16 @@ public class PumpsDirectPage {
         return this;
     }
 
+    public PumpsDirectPage clickCheckboxStream() {
+        this.checkboxes.get(2).click();
+        return this;
+    }
+
+    public PumpsDirectPage clickCheckboxSpin() {
+        this.checkboxes.get(1).click();
+        return this;
+    }
+
     public PumpsDirectPage clickAlarm() {
         this.combobox.click();
         return this;
