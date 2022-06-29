@@ -8,13 +8,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import static com.codeborne.selenide.Selectors.shadowCss;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.actions;
 
-public class PumpsDirectPage {
-    public static final String URL = Urls.PumpsDirectURL;
+public class PumpsDotPage {
+    public static final String URL = Urls.PumpsDotURL;
     @FindBy(how = How.XPATH, using = ".//ms-checkbox")
     private ElementsCollection checkboxes;
-    @FindBy(how = How.ID, using = "65194")
+    @FindBy(how = How.ID, using = "545008")
     private SelenideElement combobox;
     @FindBy(how = How.XPATH, using = ".//ms-colorpicker")
     private ElementsCollection colorButtons;
@@ -23,48 +24,33 @@ public class PumpsDirectPage {
     @FindBy(how = How.CLASS_NAME, using = "pcr-save")
     private ElementsCollection saveBackgroundColorButton;
 
-    public PumpsDirectPage clickCheckbox(int number) {
+    public PumpsDotPage clickCheckbox(int number) {
         this.checkboxes.get(number).click();
         return this;
     }
 
-    public PumpsDirectPage clickAlarm() {
+    public PumpsDotPage clickAlarm() {
         this.combobox.click();
         return this;
     }
 
-    public PumpsDirectPage clickButtonColor(int elementNum) {
-        this.colorButtons.get(elementNum).click();
-        return this;
-    }
 
-    //Ввод цветового значения
-    public PumpsDirectPage inputColor(int elementNum, String color) {
-        this.inputColor.get(elementNum).setValue(color);
-        return this;
-    }
 
-    public PumpsDirectPage clickSaveColor(int elementNum) {
-        this.saveBackgroundColorButton.get(elementNum).click();
-        return this;
-    }
-
-    public PumpsDirectPage inputWarning() {
+    public PumpsDotPage inputWarning() {
         actions().moveToElement(combobox).sendKeys("Warning").perform();
         actions().moveToElement(combobox).sendKeys(Keys.ENTER).perform();
         return this;
     }
 
-    public PumpsDirectPage inputAlarm() {
+    public PumpsDotPage inputAlarm() {
         actions().moveToElement(combobox).sendKeys("Alarm").perform();
         actions().moveToElement(combobox).sendKeys(Keys.ENTER).perform();
         return this;
     }
 
-    public PumpsDirectPage checkPump(String target, String shadowsHost, String attributeName, String attributeValue) {
+    public PumpsDotPage checkPump(String target, String shadowsHost, String attributeName, String attributeValue) {
         SelenideElement path = $(shadowCss(target, shadowsHost));
         path.shouldHave(Condition.attribute(attributeName, attributeValue));
         return this;
     }
-
 }
