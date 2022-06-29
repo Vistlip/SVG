@@ -95,4 +95,44 @@ public class VerticalPumpDirectTest {
                 .checkPump("#StoppedFill", PumpId, "stop-color", color.getRGBaYellow());
 
     }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет обода")
+    public void checkVerticalPumpHoopColor() {
+        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+                .clickButtonColor(1)
+                .inputColor(1, "Indigo")
+                .clickSaveColor(1)
+                .checkPump("#path3561", PumpId, "style", color.getRGBaFillIndigo());
+    }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет опоры")
+    public void checkVerticalPumpSupportColor() {
+        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+                .clickButtonColor(3)
+                .inputColor(3, "Pink")
+                .clickSaveColor(3)
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBPink());
+    }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет фланца")
+    public void checkVerticalPumpFlangesColor() {
+        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+                .clickButtonColor(5)
+                .inputColor(5, "Black")
+                .clickSaveColor(5)
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlack());
+    }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет корпуса")
+    public void checkVerticalPumpOutputColor() {
+        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+                .clickButtonColor(7)
+                .inputColor(7, "Aqua")
+                .clickSaveColor(7)
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBAqua());
+    }
 }

@@ -2,14 +2,13 @@ package PumpsDot;
 
 import Color.ColorCollection;
 import Page.PumpsDotPage;
-import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class GearPumpHorizontalTest {
-    String PumpId = "#\\35 44560";
+    String PumpId = "#\\";
     ColorCollection color = new ColorCollection();
 
     @Test
@@ -56,7 +55,7 @@ public class GearPumpHorizontalTest {
                 .checkPump("#pump", PumpId, "class", "Start");
     }
 
-    @Test
+/*    @Test
     @DisplayName("Проверка шестеренчетого горизонтального насоса цвет потока вкл")
     public void checkGearPumpStreamColorOn() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
@@ -135,4 +134,6 @@ public class GearPumpHorizontalTest {
                 .clickSaveColor(9)
                 .checkPump("#Workfilter", PumpId, "values", color.getSRGBMaroon());
     }
+
+ */
 }

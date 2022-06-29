@@ -1,20 +1,21 @@
 package PumpsDot;
 
 import Color.ColorCollection;
-import Page.PumpsDirectPage;
+import Page.PumpsDotPage;
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class VerticalPumpTest {
-    String PumpId = "#\\36 4692";
+    String PumpId = "#\\35 44560";
     ColorCollection color = new ColorCollection();
 
     @Test
     @DisplayName("Проверка вертикального насоса работа")
     public void checkVerticalPumpWork() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickCheckbox(0)
                 .checkPump("#path3557", PumpId, "class", "Started");
     }
@@ -22,7 +23,7 @@ public class VerticalPumpTest {
     @Test
     @DisplayName("Проверка вертикального насоса авария")
     public void checkVerticalPumpAlarm() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickAlarm()
                 .inputWarning()
                 .clickAlarm()
@@ -33,7 +34,7 @@ public class VerticalPumpTest {
     @Test
     @DisplayName("Проверка вертикального насоса предупреждение")
     public void checkVerticalPumpWarning() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickAlarm()
                 .inputWarning()
                 .checkPump("#AvaryBorder", PumpId, "class", "Warning");
@@ -42,7 +43,7 @@ public class VerticalPumpTest {
     @Test
     @DisplayName("Проверка вертикального насоса поток")
     public void checkVerticalPumpStream() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickCheckbox(2)
                 .checkPump("#path3499", PumpId, "class", "Yes");
     }
@@ -50,49 +51,79 @@ public class VerticalPumpTest {
     @Test
     @DisplayName("Проверка вертикального насоса вращение")
     public void checkVerticalPumpSpin() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickCheckbox(1)
                 .checkPump("#pump", PumpId, "class", "Start");
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет потока вкл")
+    @Description("Значение по умолчанию")
+    public void checkVerticalPumpStreamColorOnDef() {
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .checkPump("#StartedFlow", PumpId, "stop-color", "RED");
+    }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет потока вкл")
+    @Description("Второе значение")
     public void checkVerticalPumpStreamColorOn() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
-                .clickButtonColor(0)
-                .inputColor(0, "GREEN")
-                .clickSaveColor(0)
-                .checkPump("#StartedFlow", PumpId, "stop-color", color.getRGBaGreen());
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .clickIncrStreamOn()
+                .checkPump("#StartedFlow", PumpId, "stop-color", "BLUE");
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет потока выкл")
+    @Description("Значение по умолчанию")
+    public void checkVerticalPumpStreamColorOffDef() {
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .checkPump("#StoppedFlow", PumpId, "stop-color", "rgb(113,0,255)");
+    }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет потока выкл")
+    @Description("Второе значение")
     public void checkVerticalPumpStreamColorOff() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
-                .clickButtonColor(4)
-                .inputColor(4, "RED")
-                .clickSaveColor(4)
-                .checkPump("#StoppedFlow", PumpId, "stop-color", color.getRGBaRed());
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .clickIncrStreamOff()
+                .checkPump("#StoppedFlow", PumpId, "stop-color", "AQUA");
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет вращения вкл")
+    @Description("Значение по умолчанию")
+    public void checkVerticalPumpSpinColorOnDef() {
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .checkPump("#StartedFill", PumpId, "stop-color", "rgb(255,0,188)");
+    }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет вращения вкл")
+    @Description("Второе значение")
     public void checkVerticalPumpSpinColorOn() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
-                .clickButtonColor(6)
-                .inputColor(6, "BLUE")
-                .clickSaveColor(6)
-                .checkPump("#StartedFill", PumpId, "stop-color", color.getRGBaBLUE());
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .clickIncrSpinOn()
+                .checkPump("#StartedFill", PumpId, "stop-color", "YELLOW");
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет вращения выкл")
-    public void checkVerticalPumpSpinColorOff() {
-        PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
-                .clickButtonColor(2)
-                .inputColor(2, "YELLOW")
-                .clickSaveColor(2)
-                .checkPump("#StoppedFill", PumpId, "stop-color", color.getRGBaYellow());
+    @Description("Значение по умолчанию")
+    public void checkVerticalPumpSpinColorOffDef() {
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .checkPump("#StoppedFill", PumpId, "stop-color", "rgb(255,156,0)");
 
     }
+
+    @Test
+    @DisplayName("Проверка вертикального насоса цвет вращения выкл")
+    @Description("Второе значение")
+    public void checkVerticalPumpSpinColorOff() {
+        PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
+                .clickIncrSpinOff()
+                .checkPump("#StoppedFill", PumpId, "stop-color", "rgb(0,156,255)");
+
+    }
+
 }

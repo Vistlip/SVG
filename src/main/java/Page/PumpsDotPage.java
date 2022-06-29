@@ -34,7 +34,25 @@ public class PumpsDotPage {
         return this;
     }
 
+    public PumpsDotPage clickIncrStreamOn() {
+        $(shadowCss("#incr", "#\\35 46415")).click();
+        return this;
+    }
 
+    public PumpsDotPage clickIncrStreamOff() {
+        $(shadowCss("#incr", "#\\35 46431")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrSpinOn() {
+        $(shadowCss("#incr", "#\\35 46447")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrSpinOff() {
+        $(shadowCss("#incr", "#\\35 46479")).click();
+        return this;
+    }
 
     public PumpsDotPage inputWarning() {
         actions().moveToElement(combobox).sendKeys("Warning").perform();
