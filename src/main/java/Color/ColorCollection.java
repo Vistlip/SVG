@@ -1,10 +1,10 @@
 package Color;
 
 public class ColorCollection {
-    private String RGBaRed = "RGBa(255,1,1,1.0)";
-    private String RGBaGreen = "RGBa(1,128,1,1.0)";
-    private String RGBaBLUE = "RGBa(1,1,255,1.0)";
-    private String RGBaYellow = "RGBa(255,255,1,1.0)";
+    private String RGBaRed = "rgba(255,1,1,1.0)";
+    private String RGBaGreen = "rgba(1,128,1,1.0)";
+    private String RGBaBLUE = "rgba(1,1,255,1.0)";
+    private String RGBaYellow = "rgba(255,255,1,1.0)";
     private String RGBaFillIndigo = "fill: rgb(76, 1, 130);";
     private String SRGBPink = "1.00 0 0 0 0 0 0.76 0 0 0 0 0 0.80 0 0 0 0 0 1 0";
     private String SRGBBlack = "0.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0";

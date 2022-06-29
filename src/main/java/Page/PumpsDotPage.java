@@ -54,6 +54,41 @@ public class PumpsDotPage {
         return this;
     }
 
+    public PumpsDotPage clickIncrHoop() {
+        $(shadowCss("#incr", "#\\35 46463")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrSupport() {
+        $(shadowCss("#incr", "#\\35 46495")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrFlanges() {
+        $(shadowCss("#incr", "#\\35 46511")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrOutput() {
+        $(shadowCss("#incr", "#\\35 46527")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrStarted() {
+        $(shadowCss("#incr", "#\\35 46543")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrWork() {
+        $(shadowCss("#incr", "#\\35 46559")).click();
+        return this;
+    }
+
+    public PumpsDotPage clickIncrGear() {
+        $(shadowCss("#incr", "#\\35 46575")).click();
+        return this;
+    }
+
     public PumpsDotPage inputWarning() {
         actions().moveToElement(combobox).sendKeys("Warning").perform();
         actions().moveToElement(combobox).sendKeys(Keys.ENTER).perform();

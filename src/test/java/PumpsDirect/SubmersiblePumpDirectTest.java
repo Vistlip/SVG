@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SubmersiblePumpDirectTest {
     String PumpId = "#\\36 4764";
-    String PumpId5 = "#\\36 64776";
+    String PumpId5 = "#\\36 4776";
     String PumpId6 = "#\\35 42686";
     ColorCollection color = new ColorCollection();
 

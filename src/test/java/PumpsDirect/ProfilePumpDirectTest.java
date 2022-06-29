@@ -75,7 +75,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(2)
                 .inputColor(2, "YELLOW")
                 .clickSaveColor(2)
-                .checkPump("#StoppedFill", PumpId, "stop-color", color.getSRGBYellow());
+                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", color.getSRGBYellow());
     }
 
 
