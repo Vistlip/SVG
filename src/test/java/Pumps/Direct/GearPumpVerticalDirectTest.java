@@ -1,7 +1,7 @@
-package PumpsDirect;
+package Pumps.Direct;
 
 import Color.ColorCollection;
-import Page.PumpsDirectPage;
+import Page.Pumps.PumpsDirectPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 

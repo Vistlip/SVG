@@ -1,14 +1,14 @@
-package PumpsDot;
+package Pumps.Dot;
 
 import Color.ColorCollection;
-import Page.PumpsDotPage;
+import Page.Pumps.PumpsDotPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class SubmersiblePumpDirectDotTest {
+public class SubmersiblePumpDotTest {
     String PumpId = "#\\35 44693";
     String PumpId5 = "#\\35 44710";
     String PumpId6 = "#\\35 45182";

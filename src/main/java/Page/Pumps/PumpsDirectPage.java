@@ -1,5 +1,6 @@
-package Page;
+package Page.Pumps;
 
+import Page.Urls;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

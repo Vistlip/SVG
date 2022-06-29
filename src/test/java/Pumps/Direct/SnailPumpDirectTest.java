@@ -1,27 +1,27 @@
-package PumpsDirect;
+package Pumps.Direct;
 
 import Color.ColorCollection;
-import Page.PumpsDirectPage;
+import Page.Pumps.PumpsDirectPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class VerticalPumpDirectTest {
-    String PumpId = "#\\36 4692";
+public class SnailPumpDirectTest {
+    String PumpId = "#\\36 4704";
     ColorCollection color = new ColorCollection();
 
     @Test
-    @DisplayName("Проверка вертикального насоса работа")
-    public void checkVerticalPumpWork() {
+    @DisplayName("Проверка насоса улитка работа")
+    public void checkSnailPumpWork() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickCheckbox(0)
-                .checkPump("#path3557", PumpId, "class", "Started");
+                .checkPump("#path5598", PumpId, "class", "Started");
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса авария")
-    public void checkVerticalPumpAlarm() {
+    @DisplayName("Проверка насоса улитка авария")
+    public void checkSnailPumpAlarm() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickAlarm()
                 .inputWarning()
@@ -31,8 +31,8 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса предупреждение")
-    public void checkVerticalPumpWarning() {
+    @DisplayName("Проверка насоса улитка предупреждение")
+    public void checkSnailPumpWarning() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickAlarm()
                 .inputWarning()
@@ -40,24 +40,24 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса поток")
-    public void checkVerticalPumpStream() {
+    @DisplayName("Проверка насоса улитка поток")
+    public void checkSnailPumpStream() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickCheckbox(2)
-                .checkPump("#path3499", PumpId, "class", "Yes");
+                .checkPump("#path5440", PumpId, "class", "Yes");
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса вращение")
-    public void checkVerticalPumpSpin() {
+    @DisplayName("Проверка насоса улитка вращение")
+    public void checkSnailPumpSpin() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickCheckbox(1)
                 .checkPump("#pump", PumpId, "class", "Start");
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет потока вкл")
-    public void checkVerticalPumpStreamColorOn() {
+    @DisplayName("Проверка насоса улитка цвет потока вкл")
+    public void checkSnailPumpStreamColorOn() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(0)
                 .inputColor(0, "GREEN")
@@ -66,8 +66,8 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет потока выкл")
-    public void checkVerticalPumpStreamColorOff() {
+    @DisplayName("Проверка насоса улитка цвет потока выкл")
+    public void checkSnailPumpStreamColorOff() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(4)
                 .inputColor(4, "RED")
@@ -76,8 +76,8 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет вращения вкл")
-    public void checkVerticalPumpSpinColorOn() {
+    @DisplayName("Проверка насоса улитка цвет вращения вкл")
+    public void checkSnailPumpSpinColorOn() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(6)
                 .inputColor(6, "BLUE")
@@ -86,29 +86,28 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет вращения выкл")
-    public void checkVerticalPumpSpinColorOff() {
+    @DisplayName("Проверка насоса улитка цвет вращения выкл")
+    public void checkSnailPumpSpinColorOff() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(2)
                 .inputColor(2, "YELLOW")
                 .clickSaveColor(2)
                 .checkPump("#StoppedFill", PumpId, "stop-color", color.getRGBaYellow());
-
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет обода")
-    public void checkVerticalPumpHoopColor() {
+    @DisplayName("Проверка насоса улитка цвет обода")
+    public void checkSnailPumpHoopColor() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(1)
                 .inputColor(1, "Indigo")
                 .clickSaveColor(1)
-                .checkPump("#path3561", PumpId, "style", color.getRGBaFillIndigo());
+                .checkPump("#path5604", PumpId, "style", color.getRGBaFillIndigo());
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет опоры")
-    public void checkVerticalPumpSupportColor() {
+    @DisplayName("Проверка насоса улитка цвет опоры")
+    public void checkSnailPumpSupportColor() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(3)
                 .inputColor(3, "Pink")
@@ -117,8 +116,8 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет фланца")
-    public void checkVerticalPumpFlangesColor() {
+    @DisplayName("Проверка насоса улитка цвет фланца")
+    public void checkSnailPumpFlangesColor() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(5)
                 .inputColor(5, "Black")
@@ -127,8 +126,8 @@ public class VerticalPumpDirectTest {
     }
 
     @Test
-    @DisplayName("Проверка вертикального насоса цвет корпуса")
-    public void checkVerticalPumpOutputColor() {
+    @DisplayName("Проверка насоса улитка цвет корпуса")
+    public void checkSnailPumpOutputColor() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(7)
                 .inputColor(7, "Aqua")
