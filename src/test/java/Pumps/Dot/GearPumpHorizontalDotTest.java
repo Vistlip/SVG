@@ -61,7 +61,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpStreamColorOnDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#Flowfilter", PumpId, "values","1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#Flowfilter", PumpId, "values",color.getSRGBBlack());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpStreamColorOn() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrStreamOn()
-                .checkPump("#Flowfilter", PumpId, "values","0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#Flowfilter", PumpId, "values",color.getSRGBBlue());
     }
 
     @Test
@@ -78,7 +78,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpStreamColorOffDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#NFlowfilter", PumpId, "values", "0.443137254901961 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#NFlowfilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpStreamColorOff() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrStreamOff()
-                .checkPump("#NFlowfilter", PumpId, "values", "0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#NFlowfilter", PumpId, "values", color.getSRGBRed());
     }
 
     @Test
@@ -95,7 +95,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpSpinColorOnDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#Rotationfilter", PumpId, "values", "1 0 0 0 0 0 0 0 0 0 0 0 0.737254901960784 0 0 0 0 0 1 0 ");
+                .checkPump("#Rotationfilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpSpinColorOn() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSpinOn()
-                .checkPump("#Rotationfilter", PumpId, "values", "1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#Rotationfilter", PumpId, "values", color.getSRGBGreen());
     }
 
     @Test
@@ -112,7 +112,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpSpinColorOffDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#NWorkfilter", PumpId, "values", "1 0 0 0 0 0 0.611764705882353 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#NWorkfilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -121,7 +121,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpSpinColorOff() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSpinOff()
-                .checkPump("#NWorkfilter", PumpId, "values", "0 0 0 0 0 0 0.611764705882353 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#NWorkfilter", PumpId, "values", color.getSRGBYellow());
     }
 
     @Test
@@ -129,7 +129,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpHoopColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#Obodfilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 0.501960784313725 0 0 0 0 0 1 0 ");
+                .checkPump("#Obodfilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -138,7 +138,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpHoopColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrHoop()
-                .checkPump("#Obodfilter", PumpId, "values", "0.180392156862745 0 0 0 0 0 0.545098039215686 0 0 0 0 0 0.341176470588235 0 0 0 0 0 1 0 ");
+                .checkPump("#Obodfilter", PumpId, "values", color.getSRGBAqua());
     }
 
     @Test
@@ -146,7 +146,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpFlangesColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#Flangesfilter", PumpId, "values", "0.184313725490196 0 0 0 0 0 0.309803921568627 0 0 0 0 0 0.309803921568627 0 0 0 0 0 1 0 ");
+                .checkPump("#Flangesfilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -155,7 +155,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpFlangesColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrFlanges()
-                .checkPump("#Flangesfilter", PumpId, "values", "0.529411764705882 0 0 0 0 0 0.807843137254902 0 0 0 0 0 0.980392156862745 0 0 0 0 0 1 0 ");
+                .checkPump("#Flangesfilter", PumpId, "values", color.getSRGBPink());
     }
 
     @Test
@@ -163,7 +163,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#Animatefilter", PumpId, "values", "0.737254901960784 0 0 0 0 0 1 0 0 0 0 0 0.737254901960784 0 0 0 0 0 1 0 ");
+                .checkPump("#Animatefilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -172,7 +172,7 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrGear()
-                .checkPump("#Animatefilter", PumpId, "values", "1 0 0 0 0 0 1 0 0 0 0 0 0.737254901960784 0 0 0 0 0 1 0 ");
+                .checkPump("#Animatefilter", PumpId, "values", color.getSRGBAquamarine());
     }
 
     @Test
@@ -180,7 +180,7 @@ public class GearPumpHorizontalDotTest {
     @Description("Значение по умолчанию")
     public void checkGearPumpColorOnDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#Workfilter", PumpId, "values", "0 0 0 0 0 0 0.501960784313725 0 0 0 0 0 0.501960784313725 0 0 0 0 0 1 0 ");
+                .checkPump("#Workfilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -189,6 +189,6 @@ public class GearPumpHorizontalDotTest {
     public void checkGearPumpColorOn() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrWork()
-                .checkPump("#Workfilter", PumpId, "values", "0.823529411764706 0 0 0 0 0 0.705882352941177 0 0 0 0 0 0.549019607843137 0 0 0 0 0 1 0 ");
+                .checkPump("#Workfilter", PumpId, "values", color.getSRGBThistle());
     }
 }

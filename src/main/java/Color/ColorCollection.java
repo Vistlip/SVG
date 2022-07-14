@@ -5,20 +5,34 @@ public class ColorCollection {
     private String RGBaGreen = "rgba(1,128,1,1.0)";
     private String RGBaBLUE = "rgba(1,1,255,1.0)";
     private String RGBaYellow = "rgba(255,255,1,1.0)";
-    private String RGBaFillIndigo = "fill: rgb(76, 1, 130);";
-    private String SRGBPink = "1.00 0 0 0 0 0 0.76 0 0 0 0 0 0.80 0 0 0 0 0 1 0";
-    private String SRGBBlack = "0.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
-    private String SRGBAqua = "0.00 0 0 0 0 0 1.00 0 0 0 0 0 1.00 0 0 0 0 0 1 0";
-    private String SRGBGreen = "0.00 0 0 0 0 0 0.50 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
-    private String SRGBRed = "1.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
-    private String SRGBYellow = "1.00 0 0 0 0 0 1.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
-    private String SRGBOrange = "1.00 0 0 0 0 0 0.65 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
-    private String SRGBBlue = "0.00 0 0 0 0 0 0.00 0 0 0 0 0 1.00 0 0 0 0 0 1 0";
-    private String SRGBIndigo = "0.30 0 0 0 0 0 0.00 0 0 0 0 0 0.51 0 0 0 0 0 1 0";
-    private String SRGBMaroon = "0.50 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
-    private String SRGBOlive = "0.50 0 0 0 0 0 0.50 0 0 0 0 0 0.00 0 0 0 0 0 1 0";
+    private String RGBaFillBlack = "fill: black;";
+    private String RGBaFillAqua = "fill: aqua;";
+    private String SRGBPink = "1 0 0 0 0 0 0.752941176470588 0 0 0 0 0 0.796078431372549 0 0 0 0 0 1 0 ";
+    private String SRGBBlack = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ";
+    private String SRGBBlackWithoutBlank = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0";
+    private String SRGBAqua = "0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 ";
+    private String SRGBGreen = "0 0 0 0 0 0 0.501960784313725 0 0 0 0 0 0 0 0 0 0 0 1 0 ";
+    private String SRGBRed = "1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ";
+    private String SRGBYellow = "1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 ";
+    private String SRGBOrange = "1 0 0 0 0 0 0.647058823529412 0 0 0 0 0 0 0 0 0 0 0 1 0 ";
+    private String SRGBBlue = "0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 ";
+    private String SRGBIndigo = "0.294117647058824 0 0 0 0 0 0 0 0 0 0 0 0.509803921568627 0 0 0 0 0 1 0 ";
+    private String SRGBAquamarine = "0.498039215686275 0 0 0 0 0 1 0 0 0 0 0 0.831372549019608 0 0 0 0 0 1 0 ";
+    private String SRGBThistle = "0.847058823529412 0 0 0 0 0 0.749019607843137 0 0 0 0 0 0.847058823529412 0 0 0 0 0 1 0 ";
+    private String SRGBWhite = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 ";
+    private String HashBlack = "#000000";
+
+    private String Black = "BLACK";
+    private String Blue = "BLUE";
+    private String Red = "RED";
+    private String Green = "GREEN";
+    private String Yellow = "YELLOW";
 
     public ColorCollection() {
+    }
+
+    public String getBlack() {
+        return Black;
     }
 
     public String getRGBaRed() {
@@ -37,8 +51,12 @@ public class ColorCollection {
         return RGBaYellow;
     }
 
-    public String getRGBaFillIndigo() {
-        return RGBaFillIndigo;
+    public String getRGBaFillBlack() {
+        return RGBaFillBlack;
+    }
+
+    public String getRGBaFillAqua() {
+        return RGBaFillAqua;
     }
 
     public String getSRGBPink() {
@@ -77,11 +95,39 @@ public class ColorCollection {
         return SRGBIndigo;
     }
 
-    public String getSRGBMaroon() {
-        return SRGBMaroon;
+    public String getSRGBAquamarine() {
+        return SRGBAquamarine;
     }
 
-    public String getSRGBOlive() {
-        return SRGBOlive;
+    public String getSRGBThistle() {
+        return SRGBThistle;
+    }
+
+    public String getSRGBWhite() {
+        return SRGBWhite;
+    }
+
+    public String getHashBlack() {
+        return HashBlack;
+    }
+
+    public String getSRGBBlackWithoutBlank() {
+        return SRGBBlackWithoutBlank;
+    }
+
+    public String getBlue() {
+        return Blue;
+    }
+
+    public String getRed() {
+        return Red;
+    }
+
+    public String getGreen() {
+        return Green;
+    }
+
+    public String getYellow() {
+        return Yellow;
     }
 }

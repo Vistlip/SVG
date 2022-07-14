@@ -53,7 +53,7 @@ public class ProfilePumpDotTest {
     @Description("Значение по умолчанию")
     public void checkProfilePumpStreamColorOnDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixFlowFilter", PumpId, "values", "1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlowFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class ProfilePumpDotTest {
     public void checkProfilePumpStreamColorOn() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrStreamOn()
-                .checkPump("#feColorMatrixFlowFilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlowFilter", PumpId, "values", color.getSRGBBlue());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class ProfilePumpDotTest {
     @Description("Значение по умолчанию")
     public void checkProfilePumpStreamColorOffDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixBackFilter", PumpId, "values", "0.443137254901961 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixBackFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -79,7 +79,7 @@ public class ProfilePumpDotTest {
     public void checkProfilePumpStreamColorOff() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrStreamOff()
-                .checkPump("#feColorMatrixBackFilter", PumpId, "values", "0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixBackFilter", PumpId, "values", color.getSRGBRed());
     }
     
     @Test
@@ -87,7 +87,7 @@ public class ProfilePumpDotTest {
     @Description("Значение по умолчанию")
     public void checkProfilePumpStopColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", "1 0 0 0 0 0 0.611764705882353 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -96,7 +96,7 @@ public class ProfilePumpDotTest {
     public void checkProfilePumpStopColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSpinOff()
-                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", "0 0 0 0 0 0 0.611764705882353 0 0 0 0 0 1 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", color.getSRGBYellow());
 
     }
 
@@ -105,7 +105,7 @@ public class ProfilePumpDotTest {
     @Description("Значение по умолчанию")
     public void checkProfilePumpSupportColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0.647058823529412 0 0 0 0 0 0.164705882352941 0 0 0 0 0 0.164705882352941 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -114,7 +114,7 @@ public class ProfilePumpDotTest {
     public void checkProfilePumpSupportColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSupport()
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBIndigo());
     }
 
     @Test
@@ -122,7 +122,7 @@ public class ProfilePumpDotTest {
     @Description("Значение по умолчанию")
     public void checkProfilePumpFlangesColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.184313725490196 0 0 0 0 0 0.309803921568627 0 0 0 0 0 0.309803921568627 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -131,7 +131,7 @@ public class ProfilePumpDotTest {
     public void checkProfilePumpFlangesColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrFlanges()
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.529411764705882 0 0 0 0 0 0.807843137254902 0 0 0 0 0 0.980392156862745 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBPink());
     }
 
     @Test
@@ -139,7 +139,7 @@ public class ProfilePumpDotTest {
     @Description("Значение по умолчанию")
     public void checkProfilePumpStartedColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixStartedFilter", PumpId, "values", "0 0 0 0 0 0 0.501960784313725 0 0 0 0 0 0.501960784313725 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixStartedFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -148,6 +148,6 @@ public class ProfilePumpDotTest {
     public void checkProfilePumpStartedColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrStarted()
-                .checkPump("#feColorMatrixStartedFilter", PumpId, "values", "0.823529411764706 0 0 0 0 0 0.705882352941177 0 0 0 0 0 0.549019607843137 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixStartedFilter", PumpId, "values", color.getSRGBWhite());
     }
 }

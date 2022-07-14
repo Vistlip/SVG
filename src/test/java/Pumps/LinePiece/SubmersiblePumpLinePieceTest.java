@@ -13,17 +13,13 @@ public class SubmersiblePumpLinePieceTest {
     String PumpId5 = "#\\35 47296";
     String PumpId6 = "#\\35 47648";
     ColorCollection color = new ColorCollection();
-    String firstColor = "1 0 0 0 0 0 0.3843137254901961 0 0 0 0 0 0.2784313725490196 0 0 0 0 0 1 0";
-    String secondColor = "0.7686274509803922 0 0 0 0 0 0.4549019607843137 0 0 0 0 0 0.2235294117647059 0 0 0 0 0 1 0";
-    String lastColor = "0.419607843137255 0 0 0 0 0 0.556862745098039 0 0 0 0 0 0.137254901960784 0 0 0 0 0 1 0 ";
-
 
     @Test
     @DisplayName("Проверка погружного насоса №1 цвет корпуса")
     @Description("Значение по умолчанию")
-    public void checkSubmersiblePumpColor1One() {
+    public void checkSubmersiblePumpColor1Def() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixBodyFilter", PumpId, "values", firstColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId, "values", color.getSRGBBlackWithoutBlank());
     }
 
     @Test
@@ -32,8 +28,7 @@ public class SubmersiblePumpLinePieceTest {
     public void checkSubmersiblePumpColor1Two() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrOutput()
-                .clickIncrOutput()
-                .checkPump("#feColorMatrixBodyFilter", PumpId, "values", secondColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId, "values", "0.2 0 0 0 0 0 0.12941176470588237 0 0 0 0 0 0 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -46,15 +41,15 @@ public class SubmersiblePumpLinePieceTest {
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
-                .checkPump("#feColorMatrixBodyFilter", PumpId, "values", lastColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId, "values", color.getSRGBOrange());
     }
 
     @Test
     @DisplayName("Проверка погружного насоса №5 цвет корпуса")
     @Description("Значение по умолчанию")
-    public void checkSubmersiblePumpColor5One() {
+    public void checkSubmersiblePumpColor5Def() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixBodyFilter", PumpId5, "values", firstColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId5, "values", color.getSRGBBlackWithoutBlank());
     }
 
     @Test
@@ -63,8 +58,7 @@ public class SubmersiblePumpLinePieceTest {
     public void checkSubmersiblePumpColor5Two() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrOutput()
-                .clickIncrOutput()
-                .checkPump("#feColorMatrixBodyFilter", PumpId5, "values", secondColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId5, "values", "0.2 0 0 0 0 0 0.12941176470588237 0 0 0 0 0 0 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -77,15 +71,15 @@ public class SubmersiblePumpLinePieceTest {
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
-                .checkPump("#feColorMatrixBodyFilter", PumpId5, "values", lastColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId5, "values", color.getSRGBOrange());
     }
 
     @Test
     @DisplayName("Проверка погружного насоса цвет корпуса")
     @Description("Значение по умолчанию")
-    public void checkSubmersiblePumpСolor6One() {
+    public void checkSubmersiblePumpСolor6Def() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixBodyFilter", PumpId6, "values", firstColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId6, "values", color.getSRGBBlackWithoutBlank());
     }
 
     @Test
@@ -94,8 +88,7 @@ public class SubmersiblePumpLinePieceTest {
     public void checkSubmersiblePumpСolor6Two() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrOutput()
-                .clickIncrOutput()
-                .checkPump("#feColorMatrixBodyFilter", PumpId6, "values", secondColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId6, "values", "0.2 0 0 0 0 0 0.12941176470588237 0 0 0 0 0 0 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -108,7 +101,7 @@ public class SubmersiblePumpLinePieceTest {
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
-                .checkPump("#feColorMatrixBodyFilter", PumpId6, "values", lastColor);
+                .checkPump("#feColorMatrixBodyFilter", PumpId6, "values", color.getSRGBOrange());
     }
 }
 

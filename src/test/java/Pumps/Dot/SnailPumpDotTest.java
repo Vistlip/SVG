@@ -61,7 +61,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpStreamColorOnDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#StartedFlow", PumpId, "stop-color", "RED");
+                .checkPump("#StartedFlow", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
@@ -78,7 +78,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpStreamColorOffDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "rgb(113,0,255)");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
@@ -87,7 +87,7 @@ public class SnailPumpDotTest {
     public void checkSnailPumpStreamColorOff() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrStreamOff()
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "AQUA");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", "RED");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpSpinColorOnDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#StartedFill", PumpId, "stop-color", "rgb(255,0,188)");
+                .checkPump("#StartedFill", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class SnailPumpDotTest {
     public void checkSnailPumpSpinColorOn() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSpinOn()
-                .checkPump("#StartedFill", PumpId, "stop-color", "YELLOW");
+                .checkPump("#StartedFill", PumpId, "stop-color", "GREEN");
     }
 
     @Test
@@ -112,7 +112,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpSpinColorOffDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#StoppedFill", PumpId, "stop-color", "rgb(255,156,0)");
+                .checkPump("#StoppedFill", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
@@ -121,7 +121,7 @@ public class SnailPumpDotTest {
     public void checkSnailPumpSpinColorOff() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSpinOff()
-                .checkPump("#StoppedFill", PumpId, "stop-color", "rgb(0,156,255)");
+                .checkPump("#StoppedFill", PumpId, "stop-color", "YELLOW");
 
     }
 
@@ -130,7 +130,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpHoopColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#path5604", PumpId, "style", "fill: navy;");
+                .checkPump("#path5604", PumpId, "style", color.getRGBaFillBlack());
     }
 
     @Test
@@ -139,7 +139,7 @@ public class SnailPumpDotTest {
     public void checkSnailPumpHoopColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrHoop()
-                .checkPump("#path5604", PumpId, "style", "fill: seagreen;");
+                .checkPump("#path5604", PumpId, "style", color.getRGBaFillAqua());
     }
 
     @Test
@@ -147,7 +147,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpSupportColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0.647058823529412 0 0 0 0 0 0.164705882352941 0 0 0 0 0 0.164705882352941 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -156,7 +156,7 @@ public class SnailPumpDotTest {
     public void checkSnailPumpSupportColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrSupport()
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBIndigo());
     }
 
     @Test
@@ -164,7 +164,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpFlangesColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.184313725490196 0 0 0 0 0 0.309803921568627 0 0 0 0 0 0.309803921568627 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -173,7 +173,7 @@ public class SnailPumpDotTest {
     public void checkSnailPumpFlangesColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrFlanges()
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.529411764705882 0 0 0 0 0 0.807843137254902 0 0 0 0 0 0.980392156862745 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBPink());
     }
 
     @Test
@@ -181,7 +181,7 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpOutputColorDef() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "1 0 0 0 0 0 0.388235294117647 0 0 0 0 0 0.27843137254902 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
@@ -190,6 +190,6 @@ public class SnailPumpDotTest {
     public void checkSnailPumpOutputColor() {
         PumpsDotPage page = open(PumpsDotPage.URL, PumpsDotPage.class)
                 .clickIncrOutput()
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "0.419607843137255 0 0 0 0 0 0.556862745098039 0 0 0 0 0 0.137254901960784 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBOrange());
     }
 }

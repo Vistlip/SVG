@@ -62,7 +62,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(0)
                 .inputColor(0, "GREEN")
                 .clickSaveColor(0)
-                .checkPump("#Flowfilter", PumpId, "values", color.getSRGBGreen());
+                .checkPump("#Flowfilter", PumpId, "values","0.00 0 0 0 0 0 0.50 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -72,7 +72,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(4)
                 .inputColor(4, "RED")
                 .clickSaveColor(4)
-                .checkPump("#NFlowfilter", PumpId, "values", color.getSRGBRed());
+                .checkPump("#NFlowfilter", PumpId, "values", "1.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -82,7 +82,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(6)
                 .inputColor(6, "BLUE")
                 .clickSaveColor(6)
-                .checkPump("#Rotationfilter", PumpId, "values", color.getSRGBBlue());
+                .checkPump("#Rotationfilter", PumpId, "values", "0.00 0 0 0 0 0 0.00 0 0 0 0 0 1.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -92,7 +92,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(2)
                 .inputColor(2, "YELLOW")
                 .clickSaveColor(2)
-                .checkPump("#NWorkfilter", PumpId, "values", color.getSRGBYellow());
+                .checkPump("#NWorkfilter", PumpId, "values", "1.00 0 0 0 0 0 1.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -102,7 +102,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(1)
                 .inputColor(1, "Indigo")
                 .clickSaveColor(1)
-                .checkPump("#Obodfilter", PumpId, "values", color.getSRGBIndigo());
+                .checkPump("#Obodfilter", PumpId, "values", "0.30 0 0 0 0 0 0.00 0 0 0 0 0 0.51 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -112,7 +112,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(3)
                 .inputColor(3, "Pink")
                 .clickSaveColor(3)
-                .checkPump("#Supportfilter", PumpId, "values", color.getSRGBPink());
+                .checkPump("#Supportfilter", PumpId, "values", "1.00 0 0 0 0 0 0.76 0 0 0 0 0 0.80 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -122,7 +122,7 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(5)
                 .inputColor(5, "Black")
                 .clickSaveColor(5)
-                .checkPump("#Flangesfilter", PumpId, "values", color.getSRGBBlack());
+                .checkPump("#Flangesfilter", PumpId, "values", "0.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -130,9 +130,9 @@ public class GearPumpVerticalDirectTest {
     public void checkGearPumpColorOff() {
         PumpsDirectPage page = open(PumpsDirectPage.URL, PumpsDirectPage.class)
                 .clickButtonColor(10)
-                .inputColor(10, "Olive")
+                .inputColor(10, "Aquamarine")
                 .clickSaveColor(10)
-                .checkPump("#Animatefilter", PumpId, "values", color.getSRGBOlive());
+                .checkPump("#Animatefilter", PumpId, "values", "0.50 0 0 0 0 0 1.00 0 0 0 0 0 0.84 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -142,6 +142,6 @@ public class GearPumpVerticalDirectTest {
                 .clickButtonColor(9)
                 .inputColor(9, "Maroon")
                 .clickSaveColor(9)
-                .checkPump("#Workfilter", PumpId, "values", color.getSRGBMaroon());
+                .checkPump("#Workfilter", PumpId, "values","0.50 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 }

@@ -102,7 +102,7 @@ public class SnailPumpDirectTest {
                 .clickButtonColor(1)
                 .inputColor(1, "Indigo")
                 .clickSaveColor(1)
-                .checkPump("#path5604", PumpId, "style", color.getRGBaFillIndigo());
+                .checkPump("#path5604", PumpId, "style", "fill: rgb(76, 1, 130);");
     }
 
     @Test
@@ -112,7 +112,7 @@ public class SnailPumpDirectTest {
                 .clickButtonColor(3)
                 .inputColor(3, "Pink")
                 .clickSaveColor(3)
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBPink());
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "1.00 0 0 0 0 0 0.76 0 0 0 0 0 0.80 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -122,7 +122,7 @@ public class SnailPumpDirectTest {
                 .clickButtonColor(5)
                 .inputColor(5, "Black")
                 .clickSaveColor(5)
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlack());
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -132,6 +132,6 @@ public class SnailPumpDirectTest {
                 .clickButtonColor(7)
                 .inputColor(7, "Aqua")
                 .clickSaveColor(7)
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBAqua());
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "0.00 0 0 0 0 0 1.00 0 0 0 0 0 1.00 0 0 0 0 0 1 0");
     }
 }

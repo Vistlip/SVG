@@ -54,7 +54,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(0)
                 .inputColor(0, "GREEN")
                 .clickSaveColor(0)
-                .checkPump("#feColorMatrixFlowFilter", PumpId, "values", color.getSRGBGreen());
+                .checkPump("#feColorMatrixFlowFilter", PumpId, "values", "0.00 0 0 0 0 0 0.50 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -64,7 +64,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(4)
                 .inputColor(4, "RED")
                 .clickSaveColor(4)
-                .checkPump("#feColorMatrixBackFilter", PumpId, "values", color.getSRGBRed());
+                .checkPump("#feColorMatrixBackFilter", PumpId, "values", "1.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
 
@@ -75,7 +75,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(2)
                 .inputColor(2, "YELLOW")
                 .clickSaveColor(2)
-                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", color.getSRGBYellow());
+                .checkPump("#feColorMatrixStoppedFilter", PumpId, "values", "1.00 0 0 0 0 0 1.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
 
@@ -86,7 +86,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(3)
                 .inputColor(3, "Pink")
                 .clickSaveColor(3)
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBPink());
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "1.00 0 0 0 0 0 0.76 0 0 0 0 0 0.80 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -96,7 +96,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(5)
                 .inputColor(5, "Black")
                 .clickSaveColor(5)
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlack());
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.00 0 0 0 0 0 0.00 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -106,7 +106,7 @@ public class ProfilePumpDirectTest {
                 .clickButtonColor(8)
                 .inputColor(8, "Orange")
                 .clickSaveColor(8)
-                .checkPump("#feColorMatrixStartedFilter", PumpId, "values", color.getSRGBOrange());
+                .checkPump("#feColorMatrixStartedFilter", PumpId, "values", "1.00 0 0 0 0 0 0.65 0 0 0 0 0 0.00 0 0 0 0 0 1 0");
     }
 
 }

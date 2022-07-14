@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class SnailPumpDotTest {
+public class SnailPumpLinePieceTest {
     String PumpId = "#\\35 47173";
     ColorCollection color = new ColorCollection();
 
@@ -61,20 +61,29 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpStreamColorOnDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StartedFlow", PumpId, "stop-color", "#ff0000");
+                .checkPump("#StartedFlow", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет потока вкл")
     @Description("Второе значение")
-    public void checkSnailPumpStreamColorOn() {
+    public void checkSnailPumpStreamColorOnTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrStreamOn()
+                .checkPump("#StartedFlow", PumpId, "stop-color", "#000033");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет потока вкл")
+    @Description("Последнее значение")
+    public void checkSnailPumpStreamColorOnLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrStreamOn()
                 .clickIncrStreamOn()
                 .clickIncrStreamOn()
                 .clickIncrStreamOn()
                 .clickIncrStreamOn()
-                .checkPump("#StartedFlow", PumpId, "stop-color", "BLUE");
+                .checkPump("#StartedFlow", PumpId, "stop-color", color.getBlue());
     }
 
     @Test
@@ -82,20 +91,29 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpStreamColorOffDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "#7100ff");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет потока выкл")
     @Description("Второе значение")
-    public void checkSnailPumpStreamColorOff() {
+    public void checkSnailPumpStreamColorOffTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrStreamOff()
+                .checkPump("#StoppedFlow", PumpId, "stop-color", "#330000");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет потока выкл")
+    @Description("Последнее значение")
+    public void checkSnailPumpStreamColorOffLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrStreamOff()
                 .clickIncrStreamOff()
                 .clickIncrStreamOff()
                 .clickIncrStreamOff()
                 .clickIncrStreamOff()
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "AQUA");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", color.getRed());
     }
 
     @Test
@@ -103,20 +121,29 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpSpinColorOnDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StartedFill", PumpId, "stop-color", "#ff00bc");
+                .checkPump("#StartedFill", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет вращения вкл")
     @Description("Значение по умолчанию")
-    public void checkSnailPumpSpinColorOn() {
+    public void checkSnailPumpSpinColorOnTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrSpinOn()
+                .checkPump("#StartedFill", PumpId, "stop-color", "#001a00");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет вращения вкл")
+    @Description("Последнее значение")
+    public void checkSnailPumpSpinColorOnLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrSpinOn()
                 .clickIncrSpinOn()
                 .clickIncrSpinOn()
                 .clickIncrSpinOn()
                 .clickIncrSpinOn()
-                .checkPump("#StartedFill", PumpId, "stop-color", "YELLOW");
+                .checkPump("#StartedFill", PumpId, "stop-color", color.getGreen());
     }
 
     @Test
@@ -124,20 +151,30 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpSpinColorOffDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StoppedFill", PumpId, "stop-color", "#ff9c00");
+                .checkPump("#StoppedFill", PumpId, "stop-color", color.getBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет вращения выкл")
     @Description("Второе значение")
-    public void checkSnailPumpSpinColorOff() {
+    public void checkSnailPumpSpinColorOffTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrSpinOff()
+                .checkPump("#StoppedFill", PumpId, "stop-color", "#333300");
+
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет вращения выкл")
+    @Description("Последнее значение")
+    public void checkSnailPumpSpinColorOffLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrSpinOff()
                 .clickIncrSpinOff()
                 .clickIncrSpinOff()
                 .clickIncrSpinOff()
                 .clickIncrSpinOff()
-                .checkPump("#StoppedFill", PumpId, "stop-color", "rgb(0,156,255)");
+                .checkPump("#StoppedFill", PumpId, "stop-color", color.getYellow());
 
     }
 
@@ -146,20 +183,29 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpHoopColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#path5604", PumpId, "style", "fill: rgb(0, 0, 128);");
+                .checkPump("#path5604", PumpId, "style", color.getRGBaFillBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет обода")
     @Description("Второе значение")
-    public void checkSnailPumpHoopColor() {
+    public void checkSnailPumpHoopColorTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrHoop()
+                .checkPump("#path5604", PumpId, "style", "fill: rgb(0, 51, 51);");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет обода")
+    @Description("Последнее значение")
+    public void checkSnailPumpHoopColorLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrHoop()
                 .clickIncrHoop()
                 .clickIncrHoop()
                 .clickIncrHoop()
                 .clickIncrHoop()
-                .checkPump("#path5604", PumpId, "style", "fill: seagreen;");
+                .checkPump("#path5604", PumpId, "style", color.getRGBaFillAqua());
     }
 
     @Test
@@ -167,20 +213,29 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpSupportColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0.6470588235294118 0 0 0 0 0 0.1607843137254902 0 0 0 0 0 0.1607843137254902 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет опоры")
     @Description("Второе значение")
-    public void checkSnailPumpSupportColor() {
+    public void checkSnailPumpSupportColorTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrSupport()
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0.058823529411764705 0 0 0 0 0 0 0 0 0 0 0 0.10196078431372549 0 0 0 0 0 1 0");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет опоры")
+    @Description("Последнее значение")
+    public void checkSnailPumpSupportColorLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrSupport()
                 .clickIncrSupport()
                 .clickIncrSupport()
                 .clickIncrSupport()
                 .clickIncrSupport()
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", color.getSRGBIndigo());
     }
 
     @Test
@@ -188,20 +243,29 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpFlangesColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.1803921568627451 0 0 0 0 0 0.3058823529411765 0 0 0 0 0 0.3058823529411765 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет фланца")
     @Description("Второе значение")
-    public void checkSnailPumpFlangesColor() {
+    public void checkSnailPumpFlangesColorTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrFlanges()
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.2 0 0 0 0 0 0.15294117647058825 0 0 0 0 0 0.1607843137254902 0 0 0 0 0 1 0");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет фланца")
+    @Description("Последнее значение")
+    public void checkSnailPumpFlangesColorLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrFlanges()
                 .clickIncrFlanges()
                 .clickIncrFlanges()
                 .clickIncrFlanges()
                 .clickIncrFlanges()
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.529411764705882 0 0 0 0 0 0.807843137254902 0 0 0 0 0 0.980392156862745 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBPink());
     }
 
     @Test
@@ -209,19 +273,28 @@ public class SnailPumpDotTest {
     @Description("Значение по умолчанию")
     public void checkSnailPumpOutputColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "1 0 0 0 0 0 0.3843137254901961 0 0 0 0 0 0.2784313725490196 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBBlack());
     }
 
     @Test
     @DisplayName("Проверка насоса улитка цвет корпуса")
     @Description("Второе значение")
-    public void checkSnailPumpOutputColor() {
+    public void checkSnailPumpOutputColorTwo() {
+        PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
+                .clickIncrOutput()
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values","0.2 0 0 0 0 0 0.12941176470588237 0 0 0 0 0 0 0 0 0 0 0 1 0");
+    }
+
+    @Test
+    @DisplayName("Проверка насоса улитка цвет корпуса")
+    @Description("Последнее значение")
+    public void checkSnailPumpOutputColorLast() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "0.419607843137255 0 0 0 0 0 0.556862745098039 0 0 0 0 0 0.137254901960784 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBOrange());
     }
 }

@@ -2,6 +2,7 @@ package Pumps.LinePiece;
 
 import Color.ColorCollection;
 import Page.Pumps.PumpsLinePiecePage;
+import Page.Pumps.PumpsLinePiecePage;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
@@ -59,9 +60,9 @@ public class VerticalPumpLinePieceTest {
     @Test
     @DisplayName("Проверка вертикального насоса цвет потока вкл")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpStreamColorOnOne() {
+    public void checkVerticalPumpStreamColorOnDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StartedFlow", PumpId, "stop-color", "#ff0000");
+                .checkPump("#StartedFlow", PumpId, "stop-color", color.getHashBlack());
     }
 
     @Test
@@ -70,8 +71,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpStreamColorOnTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrStreamOn()
-                .clickIncrStreamOn()
-                .checkPump("#StartedFlow", PumpId, "stop-color", "#990066");
+                .checkPump("#StartedFlow", PumpId, "stop-color", "#000033");
     }
 
     @Test
@@ -84,15 +84,15 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrStreamOn()
                 .clickIncrStreamOn()
                 .clickIncrStreamOn()
-                .checkPump("#StartedFlow", PumpId, "stop-color", "BLUE");
+                .checkPump("#StartedFlow", PumpId, "stop-color", color.getBlue());
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет потока выкл")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpStreamColorOffOne() {
+    public void checkVerticalPumpStreamColorOffDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "#7100ff");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", color.getHashBlack());
     }
 
     @Test
@@ -101,8 +101,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpStreamColorOffTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrStreamOff()
-                .clickIncrStreamOff()
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "#4466ff");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", "#330000");
     }
 
     @Test
@@ -115,15 +114,15 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrStreamOff()
                 .clickIncrStreamOff()
                 .clickIncrStreamOff()
-                .checkPump("#StoppedFlow", PumpId, "stop-color", "AQUA");
+                .checkPump("#StoppedFlow", PumpId, "stop-color", color.getRed());
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет вращения вкл")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpSpinColorOnOne() {
+    public void checkVerticalPumpSpinColorOnDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StartedFill", PumpId, "stop-color", "#ff00bc");
+                .checkPump("#StartedFill", PumpId, "stop-color", color.getHashBlack());
     }
 
     @Test
@@ -132,8 +131,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpSpinColorOnTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrSpinOn()
-                .clickIncrSpinOn()
-                .checkPump("#StartedFill", PumpId, "stop-color", "#ff6671");
+                .checkPump("#StartedFill", PumpId, "stop-color", "#001a00");
     }
 
     @Test
@@ -146,15 +144,15 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrSpinOn()
                 .clickIncrSpinOn()
                 .clickIncrSpinOn()
-                .checkPump("#StartedFill", PumpId, "stop-color", "YELLOW");
+                .checkPump("#StartedFill", PumpId, "stop-color", color.getGreen());
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет вращения выкл")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpSpinColorOffOne() {
+    public void checkVerticalPumpSpinColorOffDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#StoppedFill", PumpId, "stop-color", "#ff9c00");
+                .checkPump("#StoppedFill", PumpId, "stop-color", color.getHashBlack());
 
     }
 
@@ -164,8 +162,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpSpinColorOffTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrSpinOff()
-                .clickIncrSpinOff()
-                .checkPump("#StoppedFill", PumpId, "stop-color", "#999c66");
+                .checkPump("#StoppedFill", PumpId, "stop-color", "#333300");
 
     }
 
@@ -179,16 +176,16 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrSpinOff()
                 .clickIncrSpinOff()
                 .clickIncrSpinOff()
-                .checkPump("#StoppedFill", PumpId, "stop-color", "rgb(0,156,255)");
+                .checkPump("#StoppedFill", PumpId, "stop-color", color.getYellow());
 
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет обода")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpHoopColorOne() {
+    public void checkVerticalPumpHoopColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#path3561", PumpId, "style", "fill: rgb(0, 0, 128);");
+                .checkPump("#path3561", PumpId, "style", "fill: rgb(0, 0, 0);");
     }
 
     @Test
@@ -197,10 +194,8 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpHoopColorTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrHoop()
-                .clickIncrHoop()
-                .checkPump("#path3561", PumpId, "style", "fill: rgb(19, 56, 112);");
+                .checkPump("#path3561", PumpId, "style", "fill: rgb(0, 51, 51);");
     }
-
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет обода")
@@ -212,15 +207,15 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrHoop()
                 .clickIncrHoop()
                 .clickIncrHoop()
-                .checkPump("#path3561", PumpId, "style", "fill: seagreen;");
+                .checkPump("#path3561", PumpId, "style", color.getRGBaFillAqua());
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет опоры")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpSupportColorOne() {
+    public void checkVerticalPumpSupportColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0.6470588235294118 0 0 0 0 0 0.1607843137254902 0 0 0 0 0 0.1607843137254902 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -229,8 +224,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpSupportColorTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrSupport()
-                .clickIncrSupport()
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0.38823529411764707 0 0 0 0 0 0.09803921568627451 0 0 0 0 0 0.09803921568627451 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values","0.058823529411764705 0 0 0 0 0 0 0 0 0 0 0 0.10196078431372549 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -243,15 +237,15 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrSupport()
                 .clickIncrSupport()
                 .clickIncrSupport()
-                .checkPump("#feColorMatrixSupportFilter", PumpId, "values", "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixSupportFilter", PumpId, "values",color.getSRGBIndigo());
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет фланца")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpFlangesColorOne() {
+    public void checkVerticalPumpFlangesColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.1803921568627451 0 0 0 0 0 0.3058823529411765 0 0 0 0 0 0.3058823529411765 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBBlackWithoutBlank());
     }
 
     @Test
@@ -260,8 +254,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpFlangesColorTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrFlanges()
-                .clickIncrFlanges()
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.3215686274509804 0 0 0 0 0 0.5098039215686274 0 0 0 0 0 0.5764705882352941 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.2 0 0 0 0 0 0.15294117647058825 0 0 0 0 0 0.1607843137254902 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -274,15 +267,15 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrFlanges()
                 .clickIncrFlanges()
                 .clickIncrFlanges()
-                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", "0.529411764705882 0 0 0 0 0 0.807843137254902 0 0 0 0 0 0.980392156862745 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixFlangesFilter", PumpId, "values", color.getSRGBPink());
     }
 
     @Test
     @DisplayName("Проверка вертикального насоса цвет корпуса")
     @Description("Значение по умолчанию")
-    public void checkVerticalPumpOutputColorOne() {
+    public void checkVerticalPumpOutputColorDef() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "1 0 0 0 0 0 0.3843137254901961 0 0 0 0 0 0.2784313725490196 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBBlackWithoutBlank());
     }
 
     @Test
@@ -291,8 +284,7 @@ public class VerticalPumpLinePieceTest {
     public void checkVerticalPumpOutputColorTwo() {
         PumpsLinePiecePage page = open(PumpsLinePiecePage.URL, PumpsLinePiecePage.class)
                 .clickIncrOutput()
-                .clickIncrOutput()
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "0.7686274509803922 0 0 0 0 0 0.4549019607843137 0 0 0 0 0 0.2235294117647059 0 0 0 0 0 1 0");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "0.2 0 0 0 0 0 0.12941176470588237 0 0 0 0 0 0 0 0 0 0 0 1 0");
     }
 
     @Test
@@ -305,6 +297,7 @@ public class VerticalPumpLinePieceTest {
                 .clickIncrOutput()
                 .clickIncrOutput()
                 .clickIncrOutput()
-                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", "0.419607843137255 0 0 0 0 0 0.556862745098039 0 0 0 0 0 0.137254901960784 0 0 0 0 0 1 0 ");
+                .checkPump("#feColorMatrixOutputFilter", PumpId, "values", color.getSRGBOrange());
     }
+
 }
